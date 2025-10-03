@@ -1,14 +1,21 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import MyCards from "../components/MyCards";
 
 function BYDPage() {
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3001/cars")
-            .then((res) => res.json())
-            .then((data) => setCars(data.filter(car => car.brand === "BYD")))
-            .catch((err) => console.error("Error fetching BYD cars:", err));
+        const fetchBYDCars = async () => {
+            try {
+                const response = await fetch("http://localhost:3001/cars");
+                const data = await response.json();
+                setCars(data.filter(car => car.brand === "BYD"));
+            } catch (err) {
+                console.error("Error fetching BYD cars:", err);
+            }
+        };
+
+        fetchBYDCars();
     }, []);
 
     return (

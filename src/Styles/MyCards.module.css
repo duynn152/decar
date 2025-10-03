@@ -98,19 +98,6 @@
     display: block;
 }
 
-.modalHeroTitle {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    color: #ffffff;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-    font-size: 1.6rem;
-    font-weight: 800;
-    letter-spacing: 0.2px;
-    text-align: center;
-}
 
 .modalTitle {
     color: #111827;
@@ -147,20 +134,12 @@
     margin-top: 10px;
 }
 
-.modalImg {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 16px;
-}
 
 .modalFooter {
     background: #f8fafc;
     border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.center {
-    text-align: center;
-}
 
 .specRow {
     display: flex;

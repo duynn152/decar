@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "react-bootstrap-icons";
-import styles from "../styles/CarDetailPage.module.css";
+import styles from "../Styles/CarDetailpage.module.css";
 
 function CarDetailPage() {
     const { id } = useParams();
@@ -9,10 +9,17 @@ function CarDetailPage() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:3001/cars/${id}`)
-            .then((res) => res.json())
-            .then((data) => setCar(data))
-            .catch((err) => console.error("Error fetching car:", err));
+        const fetchCar = async () => {
+            try {
+                const response = await fetch(`http://localhost:3001/cars/${id}`);
+                const data = await response.json();
+                setCar(data);
+            } catch (err) {
+                console.error("Error fetching car:", err);
+            }
+        };
+
+        fetchCar();
     }, [id]);
 
     if (!car) return <p>Đang tải dữ liệu...</p>;
