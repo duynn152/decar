@@ -88,14 +88,28 @@
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    margin-bottom: 14px;
+    margin: 0 auto 14px; /* center inside modal */
+    aspect-ratio: 16/9; /* keep a stable frame */
+    background: #000; /* avoid white gaps while loading */
+    width: 92%; /* slightly smaller to fit neatly */
+    max-width: 900px; /* prevent oversized on large screens */
 }
 
 .modalHeroImg {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 340px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: cover; /* fill and crop */
+    object-position: center; /* center subject */
     display: block;
+}
+
+@media (max-width: 576px) {
+    .modalHero {
+        aspect-ratio: 4/3; /* a bit taller on small screens */
+        width: 100%; /* use full width on small screens */
+    }
 }
 
 
@@ -172,4 +186,101 @@
 
 .priceIcon {
     color: #0ea5e9;
+}
+
+/* Dark mode styles for cards */
+[data-bs-theme="dark"] .card {
+    background: #1f2937;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="dark"] .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+}
+
+[data-bs-theme="dark"] .cardBody {
+    background: #1f2937;
+}
+
+[data-bs-theme="dark"] .cardTitle {
+    color: #f9fafb;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="dark"] .cardText {
+    color: #d1d5db;
+}
+
+[data-bs-theme="dark"] .cardText b {
+    color: #f9fafb;
+}
+
+[data-bs-theme="dark"] .specLabel {
+    color: #f9fafb;
+    font-weight: 700;
+}
+
+[data-bs-theme="dark"] .specValue {
+    color: #d1d5db;
+}
+
+[data-bs-theme="dark"] .specIcon {
+    color: #60a5fa;
+    filter: drop-shadow(0 1px 2px rgba(96, 165, 250, 0.3));
+}
+
+[data-bs-theme="dark"] .detailBtn {
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    box-shadow: 0 6px 14px rgba(59, 130, 246, 0.3);
+}
+
+[data-bs-theme="dark"] .detailBtn:hover {
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    box-shadow: 0 10px 18px rgba(59, 130, 246, 0.4);
+}
+
+[data-bs-theme="dark"] .modalContent {
+    background: #1f2937;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+}
+
+[data-bs-theme="dark"] .modalHeader {
+    background: #111827;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="dark"] .modalTitle {
+    color: #f9fafb;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="dark"] .modalBody {
+    background: #1f2937;
+}
+
+[data-bs-theme="dark"] .modalSpec {
+    color: #f9fafb;
+}
+
+[data-bs-theme="dark"] .modalSpecIcon {
+    color: #60a5fa;
+    filter: drop-shadow(0 1px 2px rgba(96, 165, 250, 0.3));
+}
+
+[data-bs-theme="dark"] .modalFooter {
+    background: #111827;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="dark"] .priceRow {
+    color: #f9fafb;
+}
+
+[data-bs-theme="dark"] .priceIcon {
+    color: #60a5fa;
+    filter: drop-shadow(0 1px 2px rgba(96, 165, 250, 0.3));
 }

@@ -4,15 +4,16 @@ import Button from "react-bootstrap/Button";
 import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BatteryCharging, Speedometer, GeoAlt, CurrencyDollar } from "react-bootstrap-icons";
+import { useTheme } from "../contexts/ThemeContext";
 import styles from "../Styles/MyCards.module.css";
 
 function MyCards({ car }) {
     const [show, setShow] = useState(false);
+    const { theme } = useTheme();
 
     return (
         <>
             <Card className={styles.card}>
-                {/* Bấm vào ảnh thì mở modal */}
                 <Card.Img
                     variant="top"
                     src={car.image}
@@ -24,7 +25,7 @@ function MyCards({ car }) {
                     <Card.Title className={styles.cardTitle}>
                         {car.brand} {car.name}
                     </Card.Title>
-                    <Card.Text className={styles.cardText}>
+                    <div className={styles.cardText}>
                         <div className={styles.specRow}>
                             <BatteryCharging size={18} className={styles.specIcon} />
                             <span className={styles.specLabel}>Pin:</span>
@@ -40,17 +41,15 @@ function MyCards({ car }) {
                             <span className={styles.specLabel}>0-100 km/h:</span>
                             <span className={styles.specValue}>{car.acceleration} giây</span>
                         </div>
-                    </Card.Text>
+                    </div>
 
-                    {/* Nút Xem chi tiết dẫn tới CarDetailPage */}
                     <Link to={`/cars/${car.id}`}>
                         <Button className={styles.detailBtn}>Xem chi tiết</Button>
                     </Link>
                 </Card.Body>
             </Card>
 
-            {/* Modal xem nhanh (gom trong file luôn) */}
-            <Modal show={show} onHide={() => setShow(false)} size="lg" centered dialogClassName={styles.modalDialog} contentClassName={styles.modalContent}>
+            <Modal show={show} onHide={() => setShow(false)} size="lg" centered dialogClassName={styles.modalDialog} contentClassName={styles.modalContent} data-bs-theme={theme}>
                 <Modal.Header closeButton className={styles.modalHeader}>
                     <Modal.Title className={styles.modalTitle}>{car.brand} {car.name}</Modal.Title>
                 </Modal.Header>

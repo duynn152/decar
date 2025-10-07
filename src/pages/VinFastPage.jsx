@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useTheme } from "../contexts/ThemeContext";
 import MyCards from "../components/MyCards";
 
 function VinFastPage() {
     const [cars, setCars] = useState([]);
+    const { theme } = useTheme();
 
     useEffect(() => {
         const fetchVinFastCars = async () => {
@@ -19,15 +21,12 @@ function VinFastPage() {
     }, []);
 
     return (
-        <div style={{ padding: "20px" }}>
-            <h1>VinFast</h1>
-            <div
-                style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-                    gap: "20px",
-                }}
-            >
+        <div className="page-container" data-bs-theme={theme}>
+            <div className="page-header">
+                <h1 className="page-title">VinFast</h1>
+                <p className="page-subtitle">Thương hiệu xe điện Việt Nam</p>
+            </div>
+            <div className="cards-grid">
                 {cars.map((car) => (
                     <MyCards key={car.id} car={car} />
                 ))}
