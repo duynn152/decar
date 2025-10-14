@@ -36,14 +36,12 @@
     gap: 26px;
 }
 
-/* New layout helpers */
 .navContainer {
     display: flex;
     align-items: center;
 }
 
 .collapseArea {
-    /* Do not force display; allow Collapse to control it */
     align-items: center;
     width: 100%;
 }
@@ -52,7 +50,7 @@
     display: flex;
     align-items: center;
     gap: 26px;
-    margin: 0 auto; /* center horizontally */
+    margin: 0 auto;
 }
 
 .rightActions {
@@ -85,7 +83,6 @@
     background: #ffffff;
 }
 
-/* Dark mode search styles */
 [data-bs-theme="dark"] .searchInput {
     border: 1px solid rgba(255, 255, 255, 0.15);
     background: rgba(31, 41, 55, 0.8);

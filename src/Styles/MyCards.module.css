@@ -88,11 +88,11 @@
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    margin: 0 auto 14px; /* center inside modal */
-    aspect-ratio: 16/9; /* keep a stable frame */
-    background: #000; /* avoid white gaps while loading */
-    width: 92%; /* slightly smaller to fit neatly */
-    max-width: 900px; /* prevent oversized on large screens */
+    margin: 0 auto 14px;
+    aspect-ratio: 16/9;
+    background: #000;
+    width: 92%;
+    max-width: 900px;
 }
 
 .modalHeroImg {
@@ -100,15 +100,15 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* fill and crop */
-    object-position: center; /* center subject */
+    object-fit: cover;
+    object-position: center;
     display: block;
 }
 
 @media (max-width: 576px) {
     .modalHero {
-        aspect-ratio: 4/3; /* a bit taller on small screens */
-        width: 100%; /* use full width on small screens */
+        aspect-ratio: 4/3;
+        width: 100%;
     }
 }
 
