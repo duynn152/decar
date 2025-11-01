@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "../contexts/ThemeContext";
 import MyCards from "../components/MyCards";
+import axios from 'axios';
 
 function BYDPage() {
     const [cars, setCars] = useState([]);
@@ -9,9 +10,8 @@ function BYDPage() {
     useEffect(() => {
         const fetchBYDCars = async () => {
             try {
-                const response = await fetch("http://localhost:3001/cars");
-                const data = await response.json();
-                setCars(data.filter(car => car.brand === "BYD"));
+                const response = await axios.get("http://localhost:3001/cars");
+                setCars(response.data.filter(car => car.brand === "BYD"));
             } catch (err) {
                 console.error("Error fetching BYD cars:", err);
             }

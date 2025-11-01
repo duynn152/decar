@@ -120,6 +120,17 @@
     transform: scale(1.1);
 }
 
+.welcomeText {
+    color: #334155;
+    font-weight: 600;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+[data-bs-theme="dark"] .welcomeText {
+    color: #d1d5db;
+}
+
 .link {
     position: relative;
     font-weight: 600;
@@ -147,7 +158,6 @@
     width: 100%;
 }
 
-/* Dark mode styles */
 [data-bs-theme="dark"] .navbar {
     background: rgba(17, 24, 39, 0.95);
     backdrop-filter: blur(12px);
@@ -198,4 +208,37 @@
     border-color: #9ca3af;
     color: #f9fafb;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.searchForm {
+  position: relative;
+  width: 220px;
+}
+
+.searchInput {
+  border-radius: 20px;
+  padding-right: 36px;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 4px rgba(13, 110, 253, 0.3);
+}
+
+.clearButton {
+  border: none !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  color: #888;
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+  cursor: pointer;
+}
+
+.clearButton:hover {
+  color: #dc3545;
 }

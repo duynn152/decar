@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useTheme } from "../contexts/ThemeContext";
 import { useSearch } from "../contexts/SearchContext";
 import MyCards from "../components/MyCards";
+import axios from 'axios';
 
 function Home() {
     const [cars, setCars] = useState([]);
@@ -12,9 +13,8 @@ function Home() {
     useEffect(() => {
         const fetchCars = async () => {
             try {
-                const response = await fetch("http://localhost:3001/cars");
-                const data = await response.json();
-                setCars(data);
+                const response = await axios.get("http://localhost:3001/cars");
+                setCars(response.data);
             } catch (err) {
                 console.error("Error fetching cars:", err);
             }

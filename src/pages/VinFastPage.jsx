@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "../contexts/ThemeContext";
 import MyCards from "../components/MyCards";
+import axios from 'axios';
 
 function VinFastPage() {
     const [cars, setCars] = useState([]);
@@ -9,9 +10,8 @@ function VinFastPage() {
     useEffect(() => {
         const fetchVinFastCars = async () => {
             try {
-                const response = await fetch("http://localhost:3001/cars");
-                const data = await response.json();
-                setCars(data.filter(car => car.brand === "VinFast"));
+                const response = await axios.get("http://localhost:3001/cars");
+                setCars(response.data.filter(car => car.brand === "VinFast"));
             } catch (err) {
                 console.error("Error fetching VinFast cars:", err);
             }

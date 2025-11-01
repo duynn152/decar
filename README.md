@@ -7,8 +7,13 @@
 ### Tính năng chính
 - **Danh sách xe** theo hãng, thẻ xe (card) có ảnh, thông số cơ bản.
 - **Xem nhanh** bằng modal: ảnh hero trên cùng, tên ở tiêu đề modal, 3 thông số dàn ngang, bên dưới là giá và mô tả.
-- **Trang chi tiết** khi bấm "Xem chi tiết".
-- **Navbar** điều hướng: Home, About, Tesla, VinFast, BYD.
+- **Trang chi tiết** khi bấm "Xem chi tiết", có hiển thị đánh giá bằng biểu tượng ngôi sao và form gửi feedback cho thành viên.
+- **Navbar** điều hướng: Home, About, Tesla, VinFast, BYD, có hiển thị tên người dùng đã đăng nhập.
+- **Quản lý trạng thái**: Sử dụng React Context API cho các trạng thái toàn cục như tìm kiếm, chủ đề giao diện và xác thực người dùng.
+- **Hệ thống đăng nhập/đăng xuất**: Tích hợp Formik/Yup cho form đăng nhập với timeout tự động, giao diện đăng nhập được cải tiến. Chỉ thành viên mới có thể gửi feedback.
+- **Quản lý người dùng**: Trang quản lý thành viên với Formik và Yup để tối ưu hóa việc thêm/sửa/xoá người dùng, bao gồm hiển thị mật khẩu khi chỉnh sửa (theo yêu cầu).
+- **Quản lý xe**: Trang quản lý xe với Formik và Yup, giới hạn hãng xe khi thêm mới (Tesla, VinFast, BYD).
+- **Quản lý Feedback**: Trang quản lý riêng cho admin để xem, chỉnh sửa và xóa feedback của người dùng.
 
 ### Yêu cầu môi trường
 - Node.js 18+
@@ -34,29 +39,43 @@ npm run dev
 ### Cấu trúc dự án (thư mục chính)
 ```
 src/
+├─ App.css
 ├─ App.jsx
 ├─ main.jsx
 ├─ index.css
 ├─ Styles/
+│  ├─ CarDetailpage.module.css
 │  ├─ MyNavbar.module.css
 │  └─ MyCards.module.css
 ├─ components/
 │  ├─ MyNavbar.jsx
-│  └─ MyCards.jsx
+│  ├─ MyCards.jsx
+│  └─ MyFooter.jsx
+├─ contexts/
+│  ├─ SearchContext.jsx
+│  ├─ ThemeContext.jsx
+│  └─ AuthContext.jsx
 └─ pages/
    ├─ Home.jsx
    ├─ About.jsx
    ├─ TeslaPage.jsx
    ├─ VinFastPage.jsx
    ├─ BYDPage.jsx
-   └─ CarDetailPage.jsx
+   ├─ CarDetailPage.jsx
+   ├─ LoginPage.jsx
+   ├─ DashboardPage.jsx
+   ├─ UserManagementPage.jsx
+   ├─ CarManagementPage.jsx
+   └─ FeedbackManagementPage.jsx
 ```
 
 ### Ghi chú triển khai
-- Đã chuẩn hoá CSS Modules trong `Styles/*` và import theo `../Styles/...`.
+- Sử dụng `App.css` cho các style chung toàn ứng dụng, bao gồm thiết lập sticky footer.
+- Đã chuẩn hoá CSS Modules trong `Styles/*` và import theo `../Styles/...`. Có thêm `src/Styles/Loginpage.module.css` cho giao diện đăng nhập và `src/Styles/MyFooter.module.css` cho footer.
 - Card: tiêu đề căn giữa, thông số căn trái, có icon `BatteryCharging`, `GeoAlt`, `Speedometer`.
 - Modal: tiêu đề ở header, ảnh hero trên cùng (mặc định cao 340px), hàng thông số phía dưới ảnh, kế tiếp là giá (kèm `CurrencyDollar`) và mô tả.
 - Có thể mở rộng Dark Mode bằng cách thêm lớp chủ đề hoặc toggle trong `MyNavbar`.
+- Footer được căn giữa và có thông tin liên hệ, kèm icon xe phía trên dòng bản quyền.
 
 ### Lệnh hữu ích
 - Kiểm tra lint (nếu cấu hình):
