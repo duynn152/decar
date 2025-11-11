@@ -1,0 +1,24 @@
+
+.imgTable {
+  width: 90px;
+}
+
+.modalBodyScroll {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+.carManagementContainer {
+  padding-bottom: 40px;
+}
+
+.tableImg {
+  width: 90px;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.actionButton {
+  margin-right: 8px;
+}

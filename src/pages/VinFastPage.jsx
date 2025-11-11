@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useTheme } from "../contexts/ThemeContext";
 import MyCards from "../components/MyCards";
 import axios from 'axios';
+import styles from "../Styles/BrandPage.module.css";
 
 function VinFastPage() {
     const [cars, setCars] = useState([]);
@@ -21,12 +22,12 @@ function VinFastPage() {
     }, []);
 
     return (
-        <div className="page-container" data-bs-theme={theme}>
-            <div className="page-header">
-                <h1 className="page-title">VinFast</h1>
-                <p className="page-subtitle">Thương hiệu xe điện Việt Nam</p>
+        <div className={styles.pageContainer} data-bs-theme={theme}>
+            <div className={styles.pageHeader}>
+                <h1 className={styles.pageTitle}>VinFast</h1>
+                <p className={styles.pageSubtitle}>Thương hiệu xe điện Việt Nam</p>
             </div>
-            <div className="cards-grid">
+            <div className={styles.cardsGrid}>
                 {cars.map((car) => (
                     <MyCards key={car.id} car={car} />
                 ))}

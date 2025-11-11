@@ -1,4 +1,3 @@
-// src/components/MyNavbar.jsx
 import { Navbar, Nav, Container, Button, Form } from "react-bootstrap";
 import { CarFront, Moon, SunFill } from "react-bootstrap-icons";
 import { Link, useNavigate } from "react-router-dom";
@@ -20,7 +19,6 @@ function MyNavbar() {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    // Khi nhấn Enter, điều hướng đến trang CarManagement hoặc Home
     navigate("/dashboard");
   };
 

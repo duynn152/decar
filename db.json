@@ -6,12 +6,20 @@
       "name": "Model 3",
       "topSpeed": 225,
       "range": 357,
-      "acceleration": 4.2,
+      "acceleration": 4.4,
       "price": 1200000000,
       "batteryCapacity": 57.5,
-      "description": "Tesla Model 3 là mẫu sedan điện phổ biến với thiết kế hiện đại và hiệu suất mạnh mẽ.",
+      "description": "Tesla Model 3 là mẫu sedan điện phổ biến với thiết kế tối giản và hiện đại. Xe sở hữu nội thất với màn hình cảm ứng 15 inch, không gian cabin rộng rãi cho 5 hành khách. Model 3 được trang bị hệ thống Autopilot tiên tiến, hỗ trợ lái tự động. Với khả năng tăng tốc từ 0-100 km/h trong 4.2 giây, Model 3 mang lại trải nghiệm lái xe thể thao. Xe phù hợp cho những người yêu thích công nghệ và muốn sở hữu một chiếc xe điện hiện đại với mức giá hợp lý.",
       "image": "https://cdn.prod.website-files.com/60ce1b7dd21cd517bb39ff20/6807a8c7597e6b65fa818511_tesla_model3.jpg",
-      "feedback": []
+      "feedback": [
+        {
+          "id": "cfca0e09-0505-47c7-a611-252d884aebb6",
+          "rating": 1,
+          "comment": "xe xau",
+          "author": "member3",
+          "date": "2025-11-11T03:08:07.107Z"
+        }
+      ]
     },
     {
       "id": "2",
@@ -22,7 +30,7 @@
       "acceleration": 3.1,
       "price": 2500000000,
       "batteryCapacity": 100,
-      "description": "Tesla Model S là sedan cao cấp với khả năng tăng tốc cực nhanh và quãng đường vượt trội.",
+      "description": "Tesla Model S là mẫu sedan cao cấp nhất của Tesla với hiệu suất vượt trội. Xe có khả năng tăng tốc từ 0-100 km/h chỉ trong 3.1 giây, đưa Model S vào hàng ngũ những chiếc xe nhanh nhất thế giới. Nội thất Model S được thiết kế sang trọng với ghế da cao cấp, hệ thống âm thanh premium và màn hình cảm ứng 17 inch. Model S được trang bị công nghệ FSD (Full Self-Driving) mới nhất. Với tốc độ tối đa 250 km/h, Model S là lựa chọn hoàn hảo cho những người đam mê tốc độ và công nghệ cao.",
       "image": "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Model-S-Hero-Desktop-US.png",
       "feedback": [
         {
@@ -31,6 +39,13 @@
           "comment": "xe xấu quá",
           "author": "member3",
           "date": "2025-11-01T03:55:37.212Z"
+        },
+        {
+          "id": "179a95a8-565a-43c6-a2e9-0628bfd1943f",
+          "rating": 5,
+          "comment": "Xe quá đẹp",
+          "author": "member2",
+          "date": "2025-11-10T15:45:43.167Z"
         }
       ]
     },
@@ -43,7 +58,7 @@
       "acceleration": 3.8,
       "price": 2800000000,
       "batteryCapacity": 100,
-      "description": "Tesla Model X là SUV điện với cửa Falcon Wing độc đáo và không gian rộng rãi.",
+      "description": "Tesla Model X là SUV điện cao cấp với thiết kế độc đáo. Điểm nhấn nổi bật là hệ thống cửa Falcon Wing, mở lên trên như cánh chim đại bàng, tạo trải nghiệm ấn tượng. Xe có thể chở lên đến 7 người với không gian cabin rộng rãi. Model X được trang bị hệ thống Autopilot tiên tiến và hệ thống lọc không khí HEPA. Với khả năng tăng tốc từ 0-100 km/h trong 3.8 giây, Model X kết hợp tính tiện dụng, an toàn và hiệu suất trong một chiếc SUV điện.",
       "image": "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Model-X-Hero-Desktop-US.png",
       "feedback": []
     },
@@ -56,7 +71,7 @@
       "acceleration": 5.4,
       "price": 1500000000,
       "batteryCapacity": 60,
-      "description": "Tesla Model Y là SUV cỡ nhỏ, tiện dụng với tầm hoạt động dài và giá hợp lý.",
+      "description": "Tesla Model Y là SUV điện cỡ nhỏ phổ biến, kết hợp tính tiện dụng và hiệu suất. Xe có thể chở lên đến 7 người với tùy chọn ghế hàng thứ ba, lý tưởng cho gia đình trẻ. Model Y được trang bị hệ thống Autopilot tiêu chuẩn. Nội thất tối giản với màn hình cảm ứng 15 inch và trần kính panorama. Model Y có hệ thống điều hòa HEPA lọc sạch không khí. Với mức giá hợp lý, Model Y là lựa chọn hoàn hảo cho những người muốn sở hữu một chiếc SUV điện tiện dụng.",
       "image": "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Model-Y-2-Hero-Desktop.jpg",
       "feedback": []
     },
@@ -69,7 +84,7 @@
       "acceleration": 4.5,
       "price": 3000000000,
       "batteryCapacity": 123,
-      "description": "Tesla Cybertruck với thiết kế tương lai, siêu bền và hiệu suất off-road mạnh mẽ.",
+      "description": "Tesla Cybertruck là cuộc cách mạng trong thiết kế xe pickup điện với hình dáng góc cạnh độc đáo. Cybertruck được làm từ thép không gỉ siêu cứng, chống trầy xước và va chạm tốt. Xe có khả năng kéo trailer lên đến 6.350 kg và chở hàng lên đến 1.587 kg. Cybertruck có khả năng off-road xuất sắc với hệ thống treo khí nén và đèn chiếu sáng tích hợp. Với thiết kế độc đáo và khả năng vượt trội, Cybertruck là biểu tượng của tương lai ngành xe điện.",
       "image": "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Cybertruck-Hero-Desktop-Dynamic-Asset.png",
       "feedback": []
     },
@@ -82,7 +97,7 @@
       "acceleration": 14,
       "price": 285000000,
       "batteryCapacity": 18,
-      "description": "VinFast EC Van (E-City Van) là van điện đô thị nhỏ gọn, phù hợp giao nhận trong thành phố, cabin 2 chỗ, không gian khoang hàng phía sau 2.600 lít.",
+      "description": "VinFast EC Van là van điện đô thị được thiết kế cho các hoạt động giao nhận trong thành phố. Xe có thiết kế nhỏ gọn, dễ di chuyển trong các con đường chật hẹp. Cabin cho 2 người với không gian lái xe thoải mái. Khoang hàng phía sau có dung tích 2.600 lít, đủ lớn để chứa nhiều loại hàng hóa. EC Van có tốc độ tối đa 105 km/h, phù hợp nhu cầu di chuyển đô thị. Với mức giá phải chăng, EC Van là giải pháp kinh tế cho các doanh nghiệp vận chuyển.",
       "image": "https://vinfast-ansuong.com/wp-content/uploads/2025/06/vinfast-ec-van-mau-xanh-21625.jpg",
       "feedback": []
     },
@@ -95,7 +110,7 @@
       "acceleration": 12.5,
       "price": 299000000,
       "batteryCapacity": 18.6,
-      "description": "VinFast VF3 là xe điện nhỏ gọn phân khúc mini-SUV 4 chỗ, phù hợp di chuyển trong đô thị. Động cơ công suất ~32 kW, mô men xoắn 110 Nm, pin ~18,64 kWh, di chuyển ~210 km/lần sạc đầy.",
+      "description": "VinFast VF3 là xe điện nhỏ gọn phân khúc mini-SUV, thiết kế cho di chuyển đô thị. Xe có kích thước nhỏ gọn nhưng không gian nội thất tối ưu cho 4 người. VF3 được trang bị động cơ điện 32 kW với mô men xoắn 110 Nm. Xe có thiết kế hiện đại, trẻ trung với nhiều màu sắc lựa chọn. Với mức giá hợp lý, VF3 là lựa chọn tuyệt vời cho những người muốn sở hữu một chiếc xe điện đầu tiên.",
       "image": "https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dweab41b5f/reserves/VF3/vf3section-5.jpg",
       "feedback": []
     },
@@ -108,7 +123,7 @@
       "acceleration": 11.5,
       "price": 480000000,
       "batteryCapacity": 37,
-      "description": "VinFast VF5 là mẫu SUV điện cỡ nhỏ, giá rẻ, phù hợp đô thị.",
+      "description": "VinFast VF5 là SUV điện cỡ nhỏ với mức giá hợp lý, thiết kế cho thị trường đô thị Việt Nam. Xe có kích thước vừa phải, dễ di chuyển trong thành phố nhưng vẫn đảm bảo không gian rộng rãi cho 5 hành khách. VF5 được trang bị các tính năng công nghệ như màn hình cảm ứng, kết nối Bluetooth và hỗ trợ Apple CarPlay/Android Auto. Nội thất được thiết kế thoải mái với ghế da cao cấp. VF5 là lựa chọn lý tưởng cho các gia đình trẻ muốn sở hữu một chiếc SUV điện tiết kiệm.",
       "image": "https://auto365.vn/uploads/images/tin%20t%E1%BB%A9c/2024/t7/xe-dien-vinfast-vf5-ban-nhieu-nhat-nua-dau-nam-2024/vinfast-vf5-ban-nhieu-nhat-nua-dau-nam-2024-1.jpg",
       "feedback": []
     },
@@ -121,7 +136,7 @@
       "acceleration": 5.9,
       "price": 950000000,
       "batteryCapacity": 82,
-      "description": "VinFast VF8 là SUV điện hạng D, mạnh mẽ và tiện nghi, hướng đến thị trường quốc tế.",
+      "description": "VinFast VF8 là SUV điện hạng D được thiết kế để cạnh tranh trên thị trường quốc tế. VF8 có thiết kế sang trọng và hiện đại với đường nét thanh lịch. Nội thất được thiết kế cao cấp với chất liệu da Nappa, ghế chỉnh điện có sưởi và làm mát, và hệ thống âm thanh Harman Kardon premium. Xe được trang bị màn hình cảm ứng lớn 15.6 inch. VF8 có thể chở lên đến 7 người với không gian cabin rộng rãi. Xe đã được xuất khẩu sang nhiều thị trường quốc tế, chứng tỏ chất lượng của xe điện Việt Nam.",
       "image": "https://vinfastquangnam.com.vn/wp-content/uploads/2024/08/vinfast-vf8-city-edition-1-7c15-9706.jpg",
       "feedback": []
     },
@@ -134,7 +149,7 @@
       "acceleration": 6.5,
       "price": 1500000000,
       "batteryCapacity": 123,
-      "description": "VinFast VF9 là SUV cỡ lớn, 7 chỗ, pin dung lượng cao, phù hợp cho gia đình.",
+      "description": "VinFast VF9 là SUV điện cỡ lớn hàng đầu của VinFast, thiết kế cho các gia đình đông người. VF9 có thể chở lên đến 7 người với 3 hàng ghế linh hoạt. Xe được trang bị pin dung lượng cao 123 kWh. Nội thất được thiết kế sang trọng với ghế chỉnh điện có sưởi, làm mát và massage. Xe được trang bị hệ thống giải trí với màn hình cảm ứng lớn và âm thanh surround cao cấp. VF9 là lựa chọn hoàn hảo cho những gia đình muốn kết hợp không gian rộng rãi, tiện nghi cao cấp và hiệu suất mạnh mẽ.",
       "image": "https://sohanews.sohacdn.com/160588918557773824/2024/4/15/anh-1-66-11422365-1713171370317-1713171370587165768856.jpg",
       "feedback": []
     },
@@ -147,7 +162,7 @@
       "acceleration": 3.9,
       "price": 800000000,
       "batteryCapacity": 85.4,
-      "description": "BYD Han EV là sedan hạng sang của Trung Quốc, nổi bật với thiết kế đẹp và công nghệ hiện đại.",
+      "description": "BYD Han EV là sedan hạng sang hàng đầu của BYD với thiết kế đẹp mắt và thanh lịch. Xe được trang bị pin lithium iron phosphate (LFP) công nghệ Blade nổi tiếng với độ an toàn cao. Han EV có khả năng tăng tốc từ 0-100 km/h chỉ trong 3.9 giây nhờ hệ thống động cơ điện kép. Nội thất được thiết kế sang trọng với ghế da Nappa, hệ thống âm thanh Dirac và màn hình cảm ứng 15.6 inch có thể xoay 90 độ. Han EV kết hợp hoàn hảo giữa thiết kế đẹp, công nghệ hiện đại và hiệu suất vượt trội.",
       "image": "https://www.byd.com/content/dam/byd-site/vn/product/han/pc/banner-pc-5.jpg",
       "feedback": []
     },
@@ -159,8 +174,8 @@
       "range": 150,
       "acceleration": 4.9,
       "price": 850000000,
-      "batteryCapacity": 19,
-      "description": "BYD Sealion 8 là SUV plug-in hybrid 7 chỗ (PHEV). Bản DM-i dùng pin Blade 19 kWh cho tầm điện ~150 km (CLTC), động cơ 1.5L + motor điện, cấu hình thể thao DM-p dùng pin 35,6 kWh, khả năng 0-100 km/h ~ 4,9 giây.",
+      "batteryCapacity": 109,
+      "description": "BYD Sealion 8 là SUV plug-in hybrid 7 chỗ (PHEV) cao cấp, kết hợp động cơ xăng và điện. Xe có 2 phiên bản: DM-i tiết kiệm nhiên liệu và DM-p thể thao. Bản DM-p có khả năng tăng tốc từ 0-100 km/h chỉ trong 4.9 giây. Sealion 8 có thể chở lên đến 7 người với không gian cabin rộng rãi. Xe được trang bị nội thất cao cấp với ghế da, màn hình cảm ứng lớn. Sealion 8 là lựa chọn lý tưởng cho những gia đình cần không gian lớn nhưng vẫn quan tâm đến môi trường.",
       "image": "https://www.byd.com/content/dam/byd-site/vn/product/sealion8/pc/5.jpg",
       "feedback": []
     },
@@ -173,7 +188,7 @@
       "acceleration": 7.5,
       "price": 600000000,
       "batteryCapacity": 44.9,
-      "description": "BYD Dolphin là hatchback điện nhỏ gọn, giá rẻ và tiết kiệm.",
+      "description": "BYD Dolphin là hatchback điện nhỏ gọn với phong cách trẻ trung và năng động. Xe có kích thước nhỏ gọn, lý tưởng cho di chuyển trong thành phố nhưng vẫn đảm bảo không gian cho 5 người. Xe được trang bị pin công nghệ Blade nổi tiếng với độ an toàn cao và khả năng sạc nhanh. Dolphin có thiết kế nội thất hiện đại với màn hình cảm ứng lớn và hệ thống điều khiển giọng nói. Với mức giá hợp lý và chi phí vận hành thấp, Dolphin là lựa chọn tuyệt vời cho những người trẻ muốn sở hữu một chiếc xe điện hiện đại.",
       "image": "https://www.byd.com/content/dam/byd-site/vn/product/dolphin/pc/new/DOLPHIN-PC-1.jpg",
       "feedback": []
     },
@@ -182,11 +197,11 @@
       "brand": "BYD",
       "name": "Atto 3",
       "topSpeed": 180,
-      "range": 480,
+      "range": 420,
       "acceleration": 7.3,
       "price": 720000000,
       "batteryCapacity": 60.5,
-      "description": "BYD Atto 3 là crossover điện với phong cách trẻ trung, hướng đến người dùng trẻ.",
+      "description": "BYD Atto 3 là crossover điện thiết kế để thu hút thế hệ trẻ với phong cách năng động. Xe có thiết kế ngoại thất cá tính với màu sắc trẻ trung. Xe được trang bị pin công nghệ Blade với khả năng sạc siêu nhanh. Nội thất được thiết kế độc đáo với các chi tiết lấy cảm hứng từ thể thao và phòng gym. Xe được trang bị màn hình cảm ứng lớn xoay được và hệ thống điều khiển giọng nói. Atto 3 là lựa chọn hoàn hảo cho những người trẻ muốn sở hữu một chiếc crossover điện năng động.",
       "image": "https://www.byd.com/content/dam/byd-site/vn/product/atto3/pc/2024-ver/ATTO%203%20-PC-%201.jpg",
       "feedback": []
     },
@@ -199,9 +214,21 @@
       "acceleration": 3.8,
       "price": 900000000,
       "batteryCapacity": 82.5,
-      "description": "BYD Seal là sedan điện cao cấp, cạnh tranh trực tiếp với Tesla Model 3.",
+      "description": "BYD Seal là sedan điện cao cấp được thiết kế để cạnh tranh trực tiếp với Tesla Model 3. Seal có thiết kế đẹp mắt với đường nét thanh lịch và thể thao. Xe được trang bị pin công nghệ Blade với khả năng sạc siêu nhanh. Seal có khả năng tăng tốc từ 0-100 km/h chỉ trong 3.8 giây nhờ hệ thống động cơ điện kép. Nội thất được thiết kế sang trọng với ghế da Nappa, màn hình cảm ứng lớn xoay được 15.6 inch. Với hiệu suất vượt trội và thiết kế đẹp mắt, Seal đã chứng minh xe điện Trung Quốc có thể cạnh tranh với các thương hiệu hàng đầu.",
       "image": "https://www.byd.com/content/dam/byd-site/vn/product/seal/pc/new/SEAL-PC-2.jpg",
       "feedback": []
+    },
+    {
+      "id": "1c82",
+      "brand": "BYD",
+      "name": "M6",
+      "topSpeed": 175,
+      "range": "420",
+      "acceleration": "8.5",
+      "price": "780000000",
+      "batteryCapacity": "55.4",
+      "description": "BYD M6 là MPV điện 7 chỗ thiết kế cho các gia đình đông người và doanh nghiệp cần phương tiện vận chuyển rộng rãi. M6 có thiết kế hiện đại với đường nét thanh lịch. Xe được trang bị pin công nghệ Blade nổi tiếng với độ an toàn cao. Nội thất được thiết kế rộng rãi, có thể chở lên đến 7 người với 3 hàng ghế linh hoạt. Các hàng ghế có thể gập lại để tạo không gian chứa đồ lớn. Xe được trang bị màn hình cảm ứng lớn và hệ thống điều hòa 3 vùng độc lập. M6 là lựa chọn lý tưởng cho các gia đình hoặc doanh nghiệp cần không gian rộng rãi và tiết kiệm.",
+      "image": "https://www.byd.com/content/dam/byd-site/vn/product/m6/pc/1.jpg"
     }
   ],
   "users": [
@@ -215,6 +242,7 @@
     {
       "username": "member",
       "email": "member@gmail.com",
+      "password": "member",
       "role": "member",
       "id": "2"
     },

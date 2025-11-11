@@ -1,0 +1,57 @@
+
+.pageContainer {
+  padding: 30px 20px;
+  max-width: 1400px; /* Increased max-width for 4 columns */
+  margin: 0 auto;
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pageTitle {
+  font-size: 3rem;
+  color: var(--bs-primary);
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.pageSubtitle {
+  font-size: 1.2rem;
+  color: var(--bs-secondary-color, gray);
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cars per row */
+  gap: 25px;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 2.2rem;
+  }
+
+  .pageSubtitle {
+    font-size: 1rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted for smaller screens */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .pageTitle {
+    font-size: 1.8rem;
+  }
+
+  .pageContainer {
+    padding: 20px 10px;
+  }
+}

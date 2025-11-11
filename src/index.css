@@ -1,9 +1,6 @@
 [data-bs-theme="dark"] {
     color-scheme: dark;
-}
-
-[data-bs-theme="dark"] body {
-    background-color: #111827;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     color: #f9fafb;
 }
 
@@ -51,15 +48,6 @@
     background-color: #f3f4f6;
     border-color: #9ca3af;
     color: #1f2937;
-}
-
-[data-bs-theme="dark"] {
-    color-scheme: dark;
-}
-
-[data-bs-theme="dark"] body {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    color: #f9fafb;
 }
 
 [data-bs-theme="dark"] .container {

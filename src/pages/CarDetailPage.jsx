@@ -5,7 +5,7 @@ import { useTheme } from "../contexts/ThemeContext";
 import styles from "../Styles/CarDetailpage.module.css";
 import axios from 'axios';
 import { useAuth } from "../contexts/AuthContext";
-import { Form, Button, Row, Col, Card } from "react-bootstrap";
+import { Form, Button, Card } from "react-bootstrap";
 import { v4 as uuidv4 } from 'uuid';
 
 function CarDetailPage() {
@@ -23,6 +23,7 @@ function CarDetailPage() {
             try {
                 const response = await axios.get(`http://localhost:3001/cars/${id}`);
                 setCar(response.data);
+
                 if (user && response.data.feedback) {
                     const feedbacked = response.data.feedback.some(f => f.author === user.username);
                     setHasUserFeedbacked(feedbacked);
@@ -76,27 +77,35 @@ function CarDetailPage() {
 
     return (
         <div className={styles.detailContainer} data-bs-theme={theme}>
+
             <div className={styles.hero}>
                 <img src={car.image} alt={car.name} className={styles.heroImg} />
                 <div className={styles.heroTitle}>
                     {car.brand} {car.name}
                 </div>
-                <div className={styles.heroBottomSpecs}>
-                    <div className={styles.heroSpec}><BatteryCharging size={18} /> <span>Pin:</span> <strong>{car.batteryCapacity} kWh</strong></div>
-                    <div className={styles.heroSpec}><GeoAlt size={18} /> <span>Quãng đường:</span> <strong>{car.range} km</strong></div>
-                    <div className={styles.heroSpec}><Speedometer size={18} /> <span>0-100 km/h:</span> <strong>{car.acceleration} giây</strong></div>
+            </div>
+
+            <div className={styles.detailSectionsContainer}>
+                <div className={styles.additionalSpecs}>
+                    <h3>Thông số kỹ thuật chi tiết</h3>
+                    <div className={styles.specsGrid}>
+                        <p className={styles.specItem}><Speedometer size={20} /> <b>Tốc độ tối đa:</b> {car.topSpeed} km/h</p>
+                        <p className={styles.specItem}><GeoAlt size={20} /> <b>Quãng đường:</b> {car.range} km</p>
+                        <p className={styles.specItem}><BatteryCharging size={20} /> <b>Dung lượng pin:</b> {car.batteryCapacity} kWh</p>
+                        <p className={styles.specItem}><b>Tăng tốc (0-100km/h):</b> {car.acceleration} giây</p>
+                    </div>
+                </div>
+
+                <div className={styles.detailSpecs}>
+                    <h3>Giá và Mô tả</h3>
+                    <div className={styles.priceDescriptionBox}>
+                        <p className={styles.priceText}><b>Giá:</b> {car.price.toLocaleString()} VND</p>
+                        <p className={styles.description}>{car.description}</p>
+                    </div>
                 </div>
             </div>
 
-            <div className={styles.detailSpecs}>
-                <p className={styles.specItem}><b>Giá:</b> {car.price.toLocaleString()} VND</p>
-            </div>
-            <p className={styles.description}>{car.description}</p>
-
-            <button onClick={() => navigate("/")} className={styles.backButton}>
-                <ArrowLeft size={18} className={styles.icon} /> Quay về trang chủ
-            </button>
-
+            {/* --- Feedback --- */}
             <div className={styles.feedbackSection}>
                 <h3>Feedback</h3>
                 {user && user.role === 'member' && !hasUserFeedbacked ? (
@@ -124,16 +133,16 @@ function CarDetailPage() {
                                 rows={3}
                                 value={comment}
                                 onChange={(e) => setComment(e.target.value)}
-                                placeholder="Write your comment here..."
+                                placeholder="Viết cảm nhận của bạn..."
                                 required
                             />
                         </Form.Group>
-                        <Button variant="primary" type="submit">Submit Feedback</Button>
+                        <Button variant="primary" type="submit">Gửi Feedback</Button>
                     </Form>
                 ) : user && user.role === 'member' && hasUserFeedbacked ? (
-                    <p className={styles.feedbackMessage}>You have already submitted feedback for this car.</p>
+                    <p className={styles.feedbackMessage}>Bạn đã gửi feedback cho xe này.</p>
                 ) : (
-                    <p className={styles.feedbackMessage}>Please login as a member to submit feedback.</p>
+                    <p className={styles.feedbackMessage}>Vui lòng đăng nhập bằng tài khoản thành viên để gửi feedback.</p>
                 )}
 
                 <div className={styles.feedbackList}>
@@ -142,23 +151,30 @@ function CarDetailPage() {
                             <Card key={index} className={styles.feedbackCard}>
                                 <Card.Body>
                                     <Card.Title>
-                                        Rating: {
-                                            [...Array(f.rating)].map((_, i) => (
-                                                <StarFill key={i} size={16} className={styles.starIcon} />
-                                            ))
-                                        }
+                                        {Array.from({ length: f.rating }).map((_, i) => (
+                                            <StarFill key={i} size={16} className={styles.starIcon} />
+                                        ))}
                                     </Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">By {f.author} on {new Date(f.date).toLocaleDateString()}</Card.Subtitle>
+                                    <Card.Subtitle className="mb-2 text-muted">
+                                        Bởi {f.author} vào {new Date(f.date).toLocaleDateString()}
+                                    </Card.Subtitle>
                                     <Card.Text>{f.comment}</Card.Text>
                                 </Card.Body>
                             </Card>
                         ))
                     ) : (
-                        <p className={styles.feedbackMessage}>No feedback yet. Be the first to leave one!</p>
+                        <p className={styles.feedbackMessage}>Chưa có feedback nào.</p>
                     )}
                 </div>
             </div>
+
+            {/* --- Nút quay về --- */}
+            <button onClick={() => navigate("/")} className={styles.backButton}>
+                <ArrowLeft size={18} className={styles.icon} /> Quay về trang chủ
+            </button>
         </div>
+
+
     );
 }
 

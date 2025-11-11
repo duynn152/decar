@@ -3,6 +3,7 @@ import { useTheme } from "../contexts/ThemeContext";
 import { useSearch } from "../contexts/SearchContext";
 import MyCards from "../components/MyCards";
 import axios from 'axios';
+import styles from "../Styles/HomePage.module.css";
 
 function Home() {
     const [cars, setCars] = useState([]);
@@ -24,12 +25,12 @@ function Home() {
     }, []);
 
     return (
-        <div className="page-container" data-bs-theme={theme}>
-            <div className="page-header">
-                <h1 className="page-title">Showroom DECAR</h1>
-                <p className="page-subtitle">Tất cả các dòng xe từ Tesla, VinFast và BYD</p>
+        <div className={styles.pageContainer} data-bs-theme={theme}>
+            <div className={styles.pageHeader}>
+                <h1 className={styles.pageTitle}>Showroom DECAR</h1>
+                <p className={styles.pageSubtitle}>Tất cả các dòng xe từ Tesla, VinFast và BYD</p>
             </div>
-            <div className="cards-grid">
+            <div className={styles.cardsGrid}>
                 {cars
                   .filter(car => {
                       if (!query) return true;

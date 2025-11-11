@@ -1,64 +1,66 @@
-import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
-import axios from 'axios'; // Import axios
+import React, { createContext, useContext, useState, useEffect, useRef } from "react";
+import axios from "axios";
 
-const AuthContext = createContext(null);
+const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const logoutTimerRef = useRef(null);
+  const logoutTimer = useRef(null);
 
+  // --- Kiểm tra server và khôi phục user ---
   useEffect(() => {
-    const checkServerStatus = async () => {
+    const initAuth = async () => {
       try {
-        await axios.get('/cars?_t=' + new Date().getTime()); // Check a known endpoint
-      } catch (error) {
-        console.warn('Server is down, logging out...');
+        await axios.get("http://localhost:3001/cars?_t=" + Date.now());
+      } catch {
+        console.warn("Server is down, logging out...");
         logout();
+        return;
+      }
+
+      const savedUser = localStorage.getItem("currentUser");
+      const savedExpire = localStorage.getItem("expirationTime");
+
+      if (savedUser && savedExpire) {
+        const expireTime = new Date(savedExpire);
+        if (expireTime > new Date()) {
+          setUser(JSON.parse(savedUser));
+          startAutoLogout(expireTime);
+        } else {
+          logout();
+        }
       }
     };
 
-    checkServerStatus(); // Run on mount
-
-    const storedUser = localStorage.getItem('currentUser');
-    const storedExpiration = localStorage.getItem('expirationTime');
-
-    if (storedUser && storedExpiration) {
-      const expirationTime = new Date(storedExpiration);
-      if (expirationTime > new Date()) {
-        setUser(JSON.parse(storedUser));
-        startLogoutTimer(expirationTime);
-      } else {
-        logout();
-      }
-    }
-    return () => {
-      clearTimeout(logoutTimerRef.current);
-    };
+    initAuth();
+    return () => clearTimeout(logoutTimer.current);
   }, []);
 
-  const startLogoutTimer = (expirationTime) => {
-    if (logoutTimerRef.current) {
-      clearTimeout(logoutTimerRef.current);
-    }
-    const remainingTime = expirationTime.getTime() - new Date().getTime();
-    logoutTimerRef.current = setTimeout(logout, remainingTime);
+  // --- Tự động logout khi hết hạn ---
+  const startAutoLogout = (expireTime) => {
+    clearTimeout(logoutTimer.current);
+    const remaining = expireTime.getTime() - Date.now();
+    logoutTimer.current = setTimeout(() => {
+      alert("Your session has expired. Please log in again.");
+      logout();
+    }, remaining);
   };
 
+  // --- Đăng nhập ---
   const login = (userData) => {
+    const expireTime = new Date(Date.now() + 60 * 60 * 1000); // 1 tiếng
     setUser(userData);
-    const expirationTime = new Date(new Date().getTime() + 60 * 60 * 1000);
-    localStorage.setItem('currentUser', JSON.stringify(userData));
-    localStorage.setItem('expirationTime', expirationTime.toISOString());
-    startLogoutTimer(expirationTime);
+    localStorage.setItem("currentUser", JSON.stringify(userData));
+    localStorage.setItem("expirationTime", expireTime.toISOString());
+    startAutoLogout(expireTime);
   };
 
+  // --- Đăng xuất ---
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('currentUser');
-    localStorage.removeItem('expirationTime');
-    if (logoutTimerRef.current) {
-      clearTimeout(logoutTimerRef.current);
-    }
+    localStorage.removeItem("currentUser");
+    localStorage.removeItem("expirationTime");
+    clearTimeout(logoutTimer.current);
   };
 
   return (

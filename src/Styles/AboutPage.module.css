@@ -1,0 +1,46 @@
+
+.pageContainer {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pageHeader {
+  margin-bottom: 40px;
+}
+
+.pageTitle {
+  font-size: 2.8rem;
+  color: var(--bs-primary);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.aboutContent {
+  background-color: var(--bs-secondary-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  line-height: 1.8;
+  text-align: left;
+}
+
+.aboutText {
+  font-size: 1.1rem;
+  color: var(--bs-body-color);
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+
+  .aboutContent {
+    padding: 20px;
+  }
+
+  .aboutText {
+    font-size: 1rem;
+  }
+}

@@ -39,18 +39,27 @@ npm run dev
 ### Cấu trúc dự án (thư mục chính)
 ```
 src/
-├─ App.css
 ├─ App.jsx
 ├─ main.jsx
 ├─ index.css
 ├─ Styles/
+│  ├─ AboutPage.module.css
+│  ├─ BrandPage.module.css
 │  ├─ CarDetailpage.module.css
+│  ├─ CarManagementPage.module.css
+│  ├─ DashboardPage.module.css
+│  ├─ FeedbackManagementPage.module.css
+│  ├─ HomePage.module.css
+│  ├─ LoginPage.module.css
+│  ├─ MyCards.module.css
+│  ├─ Myfooter.module.css
 │  ├─ MyNavbar.module.css
-│  └─ MyCards.module.css
+│  ├─ RegisterPage.module.css
+│  └─ UserManagementPage.module.css
 ├─ components/
 │  ├─ MyNavbar.jsx
 │  ├─ MyCards.jsx
-│  └─ MyFooter.jsx
+│  └─ Myfooter.jsx
 ├─ contexts/
 │  ├─ SearchContext.jsx
 │  ├─ ThemeContext.jsx
@@ -63,6 +72,7 @@ src/
    ├─ BYDPage.jsx
    ├─ CarDetailPage.jsx
    ├─ LoginPage.jsx
+   ├─ RegisterPage.jsx
    ├─ DashboardPage.jsx
    ├─ UserManagementPage.jsx
    ├─ CarManagementPage.jsx
@@ -70,8 +80,8 @@ src/
 ```
 
 ### Ghi chú triển khai
-- Sử dụng `App.css` cho các style chung toàn ứng dụng, bao gồm thiết lập sticky footer.
-- Đã chuẩn hoá CSS Modules trong `Styles/*` và import theo `../Styles/...`. Có thêm `src/Styles/Loginpage.module.css` cho giao diện đăng nhập và `src/Styles/MyFooter.module.css` cho footer.
+- Sử dụng `index.css` cho các style chung toàn ứng dụng, bao gồm thiết lập sticky footer.
+- Đã chuẩn hoá CSS Modules trong `Styles/*` và import theo `../Styles/...`. Tất cả các trang và component đều sử dụng CSS Modules riêng.
 - Card: tiêu đề căn giữa, thông số căn trái, có icon `BatteryCharging`, `GeoAlt`, `Speedometer`.
 - Modal: tiêu đề ở header, ảnh hero trên cùng (mặc định cao 340px), hàng thông số phía dưới ảnh, kế tiếp là giá (kèm `CurrencyDollar`) và mô tả.
 - Có thể mở rộng Dark Mode bằng cách thêm lớp chủ đề hoặc toggle trong `MyNavbar`.

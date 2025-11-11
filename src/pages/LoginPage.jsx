@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom'; // Import Link
+import { useNavigate, Link } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
 import { useAuth } from '../contexts/AuthContext';
 import axios from 'axios';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Container, Form, Button } from 'react-bootstrap'; // Import Container, Form, Button
+import { Container, Form, Button } from 'react-bootstrap';
+import styles from "../Styles/LoginPage.module.css";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -13,8 +14,8 @@ const LoginPage = () => {
   const { login } = useAuth();
 
   const validationSchema = Yup.object({
-    username: Yup.string().required('Username is required'),
-    password: Yup.string().required('Password is required'),
+    username: Yup.string().required(),
+    password: Yup.string().required(),
   });
 
   const formik = useFormik({
@@ -25,8 +26,7 @@ const LoginPage = () => {
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        // Fetch existing users to check for authentication
-        const response = await axios.get(`http://localhost:3001/users?_t=${new Date().getTime()}`); // Corrected URL
+        const response = await axios.get(`http://localhost:3001/users`);
         const users = response.data;
 
         const user = users.find(u => u.username.toLowerCase() === values.username.trim().toLowerCase() && u.password.toLowerCase() === values.password.trim().toLowerCase());
@@ -51,7 +51,7 @@ const LoginPage = () => {
 
   return (
     <Container fluid data-bs-theme={theme} className="d-flex flex-column align-items-center justify-content-center min-vh-100">
-      <div className="card p-4 shadow-lg" style={{ maxWidth: '400px', width: '100%' }}>
+      <div className={`card p-4 shadow-lg ${styles.loginCard}`}>
         <div className="w-100">
           <h2 className="text-center mb-4">Login</h2>
           <Form onSubmit={formik.handleSubmit}>
@@ -67,9 +67,11 @@ const LoginPage = () => {
                 isInvalid={formik.touched.username && !!formik.errors.username}
                 required
               />
-              <Form.Control.Feedback type="invalid">
-                {formik.errors.username}
-              </Form.Control.Feedback>
+              {formik.touched.username && formik.errors.username && (
+                <Form.Text className="text-danger">
+                  {formik.errors.username}
+                </Form.Text>
+              )}
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label htmlFor="password">Password</Form.Label>
@@ -83,9 +85,11 @@ const LoginPage = () => {
                 isInvalid={formik.touched.password && !!formik.errors.password}
                 required
               />
-              <Form.Control.Feedback type="invalid">
-                {formik.errors.password}
-              </Form.Control.Feedback>
+              {formik.touched.password && formik.errors.password && (
+                <Form.Text className="text-danger">
+                  {formik.errors.password}
+                </Form.Text>
+              )}
             </Form.Group>
             <Button variant="primary" type="submit" disabled={formik.isSubmitting} className="w-100 mt-3">
               Login
